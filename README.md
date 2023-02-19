@@ -48,7 +48,7 @@ Use react-dom to render each app in its own div element within your main page or
 
 Here's an example of how to render two independent React apps on the same page:
 
-{import React from "react";
+```{import React from "react";
 import ReactDOM from "react-dom";
 
 function App() {
@@ -65,7 +65,7 @@ ReactDOM.render(<App />, document.getElementById("root"));
 ReactDOM.render(<App1 />, document.getElementById("app1"));
 
 ReactDOM.render(<App2 />, document.getElementById("app2"));
-}
+}```
 
 In this example, we have a main app that renders two sub-apps, App1 and App2, in their own div elements. The App1 and App2 components are completely independent of each other and can be written and updated separately. By using ReactDOM.render() to render each app in its own element, we ensure that they are completely independent of each other and can be updated and changed separately.
 
