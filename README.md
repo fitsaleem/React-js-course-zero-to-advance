@@ -123,3 +123,18 @@ Start the development server by running npm run dev or yarn dev.
 Build the app for production by running npm run build or yarn build.
 
 Once you have completed these steps, you should have a working React app built using Vite. You can customize the app further by adding additional components, styles, and functionality as needed.
+
+- **Assignment 3** :  Run multiple react app in one project at same time on same machine:
+
+**Answer:**
+
+you can run multipe react app in your same machine by changing of your app port number :
+so by defult the react app run on port 3000 so you can only run one app at a time. if you try to run the second app so it will through out that 
+**already runing app in 3000 port**
+so you need to edit port number for runing other react app . so go to **package.json** file and replace this code on **scripts tag**
+
+("scripts":{
+     "start": "set PORT=3001 && react-scripts-start",
+    
+}
+
