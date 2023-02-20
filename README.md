@@ -24,6 +24,14 @@ It's worth noting that deleting the node_modules folder is generally not recomme
 
 - **Assignment 2** : How to remove double `console.logs` from React ? [ it is not needed in real life to remove them, its just an assignment problem ].  [ *Hint: Some special Component at top level is of App is causing it* ]. We explore more about  - why this is needed in later videos.
 
+***Answer:***
+
+just remove these tags from the app.js file
+
+``` 
+<React.StrictMode>
+   </React.StrictMode> 
+```
 ### Special Assignments ==============
 
 - **Assignment 3** : Create a Page with multiple React Apps. Both React Apps should be independent of each other.
