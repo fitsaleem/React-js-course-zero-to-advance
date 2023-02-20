@@ -1,29 +1,9 @@
-import './App.css';
-
-
-
-export const App=()=> {
-  console.log("App")
-  let name="saleem raza"
-  
-  return (
-    <div className="App">
-      <header className= "App-header">
-        <p>
-          Hello World
-        </p>
-        {name}
-       <Demo></Demo>
-      </header>
-    </div>
-  );
+import "./App.css"
+let center="center"
+function App(){
+return (
+<div className={center}> Hello World</div>
+)
 }
 
-export const Demo=()=>{
-  console.log("Demo")
-  return(
-    <p>Hello demo component</p>
-  )
-}
-
-
+export default App;
