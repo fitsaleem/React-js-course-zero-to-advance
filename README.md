@@ -133,8 +133,10 @@ so by defult the react app run on port 3000 so you can only run one app at a tim
 **already runing app in 3000 port**
 so you need to edit port number for runing other react app . so go to **package.json** file and replace this code on **scripts tag**
 
-```"scripts":{
+```
+"scripts":{
      "start": "set PORT=3001 && react-scripts-start",
     
-}```
+}
+```
 
