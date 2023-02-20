@@ -1,12 +1,13 @@
 import './App.css';
 
 
+
 export const App=()=> {
   console.log("App")
   let name="saleem raza"
   
   return (
-    <div class="App">
+    <div className="App">
       <header className= "App-header">
         <p>
           Hello World
