@@ -24,14 +24,6 @@ It's worth noting that deleting the node_modules folder is generally not recomme
 
 - **Assignment 2** : How to remove double `console.logs` from React ? [ it is not needed in real life to remove them, its just an assignment problem ].  [ *Hint: Some special Component at top level is of App is causing it* ]. We explore more about  - why this is needed in later videos.
 
-***Answer:***
-
-just remove these tags from the app.js file
-
-``` 
-<React.StrictMode>
-   </React.StrictMode> 
-```
 ### Special Assignments ==============
 
 - **Assignment 3** : Create a Page with multiple React Apps. Both React Apps should be independent of each other.
@@ -56,7 +48,7 @@ Use react-dom to render each app in its own div element within your main page or
 
 Here's an example of how to render two independent React apps on the same page:
 
-```import React from "react";
+{import React from "react";
 import ReactDOM from "react-dom";
 
 function App() {
@@ -73,7 +65,7 @@ ReactDOM.render(<App />, document.getElementById("root"));
 ReactDOM.render(<App1 />, document.getElementById("app1"));
 
 ReactDOM.render(<App2 />, document.getElementById("app2"));
-```
+}
 
 In this example, we have a main app that renders two sub-apps, App1 and App2, in their own div elements. The App1 and App2 components are completely independent of each other and can be written and updated separately. By using ReactDOM.render() to render each app in its own element, we ensure that they are completely independent of each other and can be updated and changed separately.
 
@@ -107,7 +99,7 @@ Install the React dependencies by running npm install react react-dom or yarn ad
 
 Create a new index.js file in the src directory and add the following code:
 
-```import React from 'react';
+{import React from 'react';
 import ReactDOM from 'react-dom';
 
 function App() {
@@ -115,16 +107,16 @@ function App() {
 }
 
 ReactDOM.render(<App />, document.getElementById('root'));
-```
+}
 
 ***Create a new vite.config.js file in the root directory and add the following code:***
 
-```module.exports = {
+module.exports = {
   build: {
     outDir: 'dist'
   }
 }
-```
+
 
 Start the development server by running npm run dev or yarn dev.
 
@@ -132,20 +124,28 @@ Build the app for production by running npm run build or yarn build.
 
 Once you have completed these steps, you should have a working React app built using Vite. You can customize the app further by adding additional components, styles, and functionality as needed.
 
-- **Assignment 5** :  Run multiple react app in one project at same time on same machine:
+## Chapter 2 -   Components - JSX and Props
 
-**Answer:**
+ 
+- **Assignment 1** :  Create a simple React app for **RESUME Builder**. It will be static website. You have to make components like **Resume** as top level and under it - **Skills**, **Education**, **Experience** etc as components.  All resume data will be under 1 big JavaScript object like which you can us in components via props. You can fix the number of items in **Skills**, **Education**, **Experience** or any section. Example you can say that only 3 experience items is allowed.
 
-you can run multipe react app in your same machine by changing of your app port number :
-so by defult the react app run on port 3000 so you can only run one app at a time. if you try to run the second app so it will through out that 
-**already runing app in 3000 port**
-so you need to edit port number for runing other react app . so go to **package.json** file and replace this code on **scripts tag**
+  ``` 
+   resume = {
+      experience : [ { year:2012, company:'xyz', role:'something' }],
+      education:[ ],
+      skills : [ 'react js', 'node js']
+      .....
+      ...
+      }
+  ```
 
-```
-"scripts":{
-     "start": "set PORT=3001 && react-scripts-start",
-    
-}
-```
+   > You can choose any simple HTML layout and convert it to React Components 
+ 
+   Example Link : [ Resume HTML ](https://codepen.io/emzarts/pen/OXzmym)
 
+  ### Special Assignments ==============
 
+- **Assignment 2** : Create a Parent Component called **Border** which can provide some CSS border to any component nested into it. [Hint : You will need to use `children` props here
+   < Border> 
+         < Component > 
+   < Border />
