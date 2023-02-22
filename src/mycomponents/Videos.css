@@ -1,0 +1,17 @@
+*{
+    box-sizing: border-box;
+}
+.image{
+    
+    cursor: pointer;
+    margin-top: 1rem;
+    
+    
+
+}
+.videoDetails{
+color: rgb(150, 150, 150);
+margin-top: 5px;
+
+}
+
