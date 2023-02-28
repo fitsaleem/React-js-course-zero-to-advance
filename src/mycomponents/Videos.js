@@ -3,21 +3,13 @@ import "./Videos.css";
 import React from "react";
 
 import "./Videos.css";
-const Videos = ({ Name, Views, time, tick = true }) => {
+const Videos = ({ Name, Views, time, tick = true , image}) => {
   let channelName = "fitcodding";
   return (
     <>
       <div className="image">
         <div>
-          <iframe
-            width="250"
-            height="150"
-            src="https://www.youtube.com/embed/NJ-he3DBpCE"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-          ></iframe>
+         {image}
         </div>
         {/* first method */}
         {/* {tick ?(

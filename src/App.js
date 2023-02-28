@@ -1,29 +1,29 @@
-import "./App.css"
-import Videos from './mycomponents/Videos'
-let center="center"
-function App({Title}){
+import "./App.css";
+import Videos from "./mycomponents/Videos";
+import youtubeVideos from "./youtube-video-data/Data";
 
-    let obj={
-        Name:"react-js course for bignners", 
-        Views:"500K" ,
-        time:"1 years",
-        tick: false
-    }
-    
-return (
+
+let center = "center";
+
+function App({ Title }) {
+ 
+  return (
     <>
-    <div className={center}> {Title}</div>
-    <div className="container">
-
-<Videos  {...obj} ></Videos>
-<Videos  Name="javaScript course for biggners" Views="500K" time="2 years" tick={false}></Videos>
-<Videos  Name="nodeJS course in one video" Views="200K" time="1 months"></Videos>
-<Videos  Name="react-js Advance course" Views="10K" time="5 days"></Videos>
-
-</div>
-</>
-)
+      <div className={center}> {Title}</div>
+      <div className="container">
+        {youtubeVideos.map((video) => (
+          <Videos
+            key={video.id}
+            Name={video.Name}
+            Views={video.Views}
+            time={video.time}
+            tick={video.tick}
+            image={video.image}
+          ></Videos>
+        ))}
+      </div>
+    </>
+  );
 }
 
 export default App;
-
