@@ -1,6 +1,14 @@
+import '../mycomponents/playButton.css'
+
+function handlerbutton(){
+    alert("hello play buttom")
+}
+
 function PlayButton(){
     return(
-<button onClick={console.log("i am play")}>Play</button>
+        <div className="playbutton">
+<button onClick={handlerbutton}>Play</button>
+</div>
     )
 }
 

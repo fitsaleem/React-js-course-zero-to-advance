@@ -33,7 +33,9 @@ const Videos = ({ Name, Views, time, tick = true , image}) => {
           </div>
         </div>
       </div>
+     
     </>
+    
   );
 };
 export default Videos;
