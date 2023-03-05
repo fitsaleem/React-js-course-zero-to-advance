@@ -1,9 +1,8 @@
 import "./Videos.css";
-
 import React from "react";
-
 import "./Videos.css";
-const Videos = ({ Name, Views, time, tick = true , image}) => {
+
+const Videos = ({ Name, Views, time, tick = true , image , children}) => {
   let channelName = "fitcodding";
   return (
     <>
@@ -32,7 +31,9 @@ const Videos = ({ Name, Views, time, tick = true , image}) => {
             Views: {Views} . {time}
           </div>
         </div>
+        {children}
       </div>
+
      
     </>
     
