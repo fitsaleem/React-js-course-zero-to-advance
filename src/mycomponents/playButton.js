@@ -1,25 +1,28 @@
+import { useState } from 'react'
 import '../mycomponents/playButton.css'
 
 
 
 function PlayButton({children,onPlay,onPause}){
 
-    let playing= false; // don'nt use this approch
+    // let playing= false; // don'nt use this approch
+    const [playing , setPlaying]=useState(false)
+    
 
 function handlerbutton(e){
 e.stopPropagation() // alway use this event object for handle event bubbling
 
  if(playing){
-onPlay()
+     onPlay()
  }else{
     onPause()
     
  }
- playing=!playing
+ setPlaying(!playing)
         }
     return(
         <div className="playbutton">
-<button onClick={handlerbutton}>{children}</button>
+<button onClick={handlerbutton}>{playing? children + "⏯️":children +"⏸️"}</button>
 </div>
     )
 }

@@ -31,3 +31,16 @@ h1{
     cursor: pointer;
     transition: 1s ease-out;
 }
+.number{
+    align-items: center;
+    width: 70px;
+    height: 70spx;
+    text-align: center;
+    font-size: 20px;
+    padding: 10px 10px;
+    color: #fff;
+    margin: auto;
+    margin-top: 10px;
+    background: #000;
+    border-radius: 50%;
+}
