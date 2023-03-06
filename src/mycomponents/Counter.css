@@ -4,6 +4,19 @@
     box-sizing: border-box;
 }
 
+h1{
+    text-align: center;
+    border: 3px solid black;
+    margin: 10px 10px;
+    background-color: yellowgreen;
+}
+
+.counter{
+    margin: auto;
+    width: fit-content;
+    
+}
+
 .playbutton button{
     width: 15rem;
     height: 40px;
