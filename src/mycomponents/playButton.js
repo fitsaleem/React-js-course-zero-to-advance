@@ -4,7 +4,7 @@ import '../mycomponents/playButton.css'
 
 
 function PlayButton({children,onPlay,onPause}){
-
+    console.log("render playButton component")
     // let playing= false; // don'nt use this approch
     const [playing , setPlaying]=useState(false)
     

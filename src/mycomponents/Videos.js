@@ -4,6 +4,7 @@ import "./Videos.css";
 
 const Videos = ({ Name, Views, time, tick = true , image , children}) => {
   let channelName = "fitcodding";
+  console.log("render Video component")
   return (
     
     <>

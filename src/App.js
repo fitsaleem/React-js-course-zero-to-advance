@@ -4,46 +4,17 @@ import videoDB from "./youtube-video-data/Data";
 import React, { useState } from "react";
 import PlayButton from "./mycomponents/playButton";
 import Counter from "./mycomponents/Counter";
+import AddVideo from "./mycomponents/AddVideo";
 
 let center = "center";
 
 function App({ Title }) {
+  console.log("render App component")
   const [youtubeVideos, setYoutubeVideos] = useState(videoDB);
   return (
     <>
       <div className={center}> {Title}</div>
-
-      <div className="playbutton">
-        <button
-          onClick={() => {
-            setYoutubeVideos([
-              ...youtubeVideos,
-              {
-                id: youtubeVideos.length+1,
-                image: (
-                  <>
-                    <iframe
-                      width="250"
-                      height="150"
-                      src="https://www.youtube.com/embed/NJ-he3DBpCE"
-                      title="YouTube video player"
-                      frameborder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      allowfullscreen
-                    ></iframe>
-                  </>
-                ),
-                Name: "react-js course for bignners",
-                Views: "500K",
-                time: "1 years",
-                tick: true,
-              },
-            ]);
-          }}
-        >
-          Add Videos
-        </button>
-      </div>
+      <AddVideo></AddVideo>
 
       <div className="container">
         {youtubeVideos.map((video) => (

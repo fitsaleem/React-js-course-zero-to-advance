@@ -14,8 +14,8 @@ let youtubeVideos = [
         ></iframe>
       </>
     ),
-    Name: "react-js course for bignners",
-    Views: "500K",
+    name: "react-js course for bignners",
+    views: "500K",
     time: "1 years",
     tick: true,
   },
@@ -34,8 +34,8 @@ let youtubeVideos = [
         ></iframe>
       </>
     ),
-    Name: "node-js course for bignners",
-    Views: "500K",
+    name: "node-js course for bignners",
+    views: "500K",
     time: "1 months",
     tick: false,
   },
@@ -54,8 +54,8 @@ let youtubeVideos = [
         ></iframe>
       </>
     ),
-    Name: "javaScript course for bignners",
-    Views: "100k",
+    name: "javaScript course for bignners",
+    views: "100k",
     time: "2 years",
     tick: false,
   },
@@ -74,8 +74,8 @@ let youtubeVideos = [
         ></iframe>
       </>
     ),
-    Name: "react-js course for bignners",
-    Views: "500K",
+    name: "react-js course for bignners",
+    views: "500K",
     time: "1 years",
     tick: true,
   },
