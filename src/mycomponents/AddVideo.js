@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./AddVideo.css";
 
-function AddVideo() {
+function AddVideo({AddYoutubeVideo}) {
   const [video, setVideo] = useState({
     image: (
       <>
@@ -25,6 +25,7 @@ function AddVideo() {
   function handlerSubmit(e) {
     e.preventDefault();
     console.log(video)
+    AddYoutubeVideo(video)
   }
 
   function handleChange(e) {

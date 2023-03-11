@@ -11,17 +11,21 @@ let center = "center";
 function App({ Title }) {
   console.log("render App component")
   const [youtubeVideos, setYoutubeVideos] = useState(videoDB);
+
+  function AddYoutubeVideo(video){
+    setYoutubeVideos([...youtubeVideos,video])
+  }
   return (
     <>
       <div className={center}> {Title}</div>
-      <AddVideo></AddVideo>
+      <AddVideo AddYoutubeVideo={AddYoutubeVideo}></AddVideo>
 
       <div className="container">
         {youtubeVideos.map((video) => (
           <Videos
             key={video.id}
-            Name={video.Name}
-            Views={video.Views}
+            Name={video.name}
+            Views={video.views}
             time={video.time}
             tick={video.tick}
             image={video.image}
@@ -31,7 +35,7 @@ function App({ Title }) {
               onPlay={() => console.log("play now")}
               onPause={() => console.log("pause now")}
             >
-              {video.Name}
+              {video.name}
             </PlayButton>
           </Videos>
         ))}
