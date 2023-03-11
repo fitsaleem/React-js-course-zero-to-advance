@@ -13,7 +13,7 @@ function App({ Title }) {
   const [youtubeVideos, setYoutubeVideos] = useState(videoDB);
 
   function AddYoutubeVideo(video){
-    setYoutubeVideos([...youtubeVideos,video])
+    setYoutubeVideos([...youtubeVideos,{...video,id: youtubeVideos.length+1}])
   }
   return (
     <>
@@ -24,8 +24,8 @@ function App({ Title }) {
         {youtubeVideos.map((video) => (
           <Videos
             key={video.id}
-            Name={video.name}
-            Views={video.views}
+            name={video.name}
+            views={video.views}
             time={video.time}
             tick={video.tick}
             image={video.image}

@@ -2,7 +2,7 @@ import "./Videos.css";
 import React from "react";
 
 
-const Videos = ({ Name, Views, time, tick = true , image , children}) => {
+const Videos = ({ name, views, time, tick = true , image , children}) => {
   let channelName = "fitcodding";
   console.log("render Video component")
   return (
@@ -27,10 +27,10 @@ const Videos = ({ Name, Views, time, tick = true , image , children}) => {
             {channelName} <span className="tick"> {tick ? "✔" : null } </span>
           </div>
 
-        <div> {Name} </div>
+        <div> {name} </div>
         <div className="videoDetails">
           <div>
-            Views: {Views} . {time}
+            Views: {views} . {time}
           </div>
         </div>
         {children}
