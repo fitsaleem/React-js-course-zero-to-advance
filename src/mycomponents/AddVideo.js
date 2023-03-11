@@ -1,31 +1,33 @@
 import React, { useState } from "react";
 import "./AddVideo.css";
 
-function AddVideo({AddYoutubeVideo}) {
-  const [video, setVideo] = useState({
-    image: (
-      <>
-        <iframe
-          width="250"
-          height="150"
-          src="https://www.youtube.com/embed/NJ-he3DBpCE"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-        ></iframe>
-      </>
-    ),
-    time: "1 years",
-    tick: true,
-    name:"",
-    views:""
+let initialAddVideo={
+  image: (
+    <>
+      <iframe
+        width="250"
+        height="150"
+        src="https://www.youtube.com/embed/NJ-he3DBpCE"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      ></iframe>
+    </>
+  ),
+  time: "1 years",
+  tick: true,
+  name:"",
+  views:""
 
-  });
+}
+
+function AddVideo({AddYoutubeVideo}) {
+  const [video, setVideo] = useState(initialAddVideo);
   function handlerSubmit(e) {
     e.preventDefault();
-    console.log(video)
     AddYoutubeVideo(video)
+    setVideo(initialAddVideo)// use for clean from 
   }
 
   function handleChange(e) {
@@ -38,12 +40,14 @@ function AddVideo({AddYoutubeVideo}) {
         name="name"
         onChange={handleChange}
         placeholder="title"
+        value={video.name} //control form
       ></input>
       <input
         type="text"
         name="views"
         onChange={handleChange}
         placeholder="views"
+        value={video.views}
       ></input>
       <div className="playbutton">
         <button
