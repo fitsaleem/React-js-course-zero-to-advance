@@ -34,8 +34,9 @@ function AddVideo({AddYoutubeVideo}) {
     setVideo({ ...video, [e.target.name]: e.target.value });
   }
   return (
-    <form>
+    <form className="form-container" >
       <input
+      className="form-input" 
         type="text"
         name="name"
         onChange={handleChange}
@@ -43,6 +44,7 @@ function AddVideo({AddYoutubeVideo}) {
         value={video.name} //control form
       ></input>
       <input
+      className="form-input" 
         type="text"
         name="views"
         onChange={handleChange}
@@ -51,6 +53,7 @@ function AddVideo({AddYoutubeVideo}) {
       ></input>
       <div className="playbutton">
         <button
+        className="form-submit"
           onClick={handlerSubmit}
         >
           Add Videos
