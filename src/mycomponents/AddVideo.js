@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./AddVideo.css";
 
 let initialAddVideo={
@@ -22,17 +22,29 @@ let initialAddVideo={
 
 }
 
-function AddVideo({AddYoutubeVideo}) {
+function AddVideo({AddYoutubeVideo ,editableVideo ,editVideo}) {
   const [video, setVideo] = useState(initialAddVideo);
   function handlerSubmit(e) {
     e.preventDefault();
-    AddYoutubeVideo(video)
+    if(editableVideo){
+      editVideo(video)
+    }else{
+      AddYoutubeVideo(video)
+    }
+  
     setVideo(initialAddVideo)// use for clean from 
   }
 
   function handleChange(e) {
     setVideo({ ...video, [e.target.name]: e.target.value });
   }
+
+  useEffect(() => {
+    if(editableVideo){
+      setVideo(editableVideo)
+    }
+  }, [editableVideo])
+  
   return (
     <form className="form-container" >
       <input
@@ -56,7 +68,7 @@ function AddVideo({AddYoutubeVideo}) {
         className="form-submit"
           onClick={handlerSubmit}
         >
-          Add Videos
+         { editableVideo ? "Edit" : "Add"}  Video
         </button>
       </div>
     </form>
