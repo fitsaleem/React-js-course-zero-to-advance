@@ -1,7 +1,7 @@
 import Videos from "./Videos"
 import PlayButton from "./playButton"
 
-function VideoList({youtubeVideos}){
+function VideoList({youtubeVideos , removeVideo,updateVideo}){
     return(
         <div className="container">
         {youtubeVideos.map((video) => (
@@ -12,6 +12,9 @@ function VideoList({youtubeVideos}){
             time={video.time}
             tick={video.tick}
             image={video.image}
+            removeVideo={removeVideo}
+            updateVideo={updateVideo}
+            id={video.id}
           >
             {" "}
             <PlayButton

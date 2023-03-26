@@ -7,6 +7,7 @@
     
     cursor: pointer;
     margin-top: 1rem;
+    position: relative;
     
     
 
@@ -19,5 +20,39 @@ margin-top: 5px;
 .tick{
     color: rgb(3, 179, 248);
     
+}
+.remove{
+    position: absolute;
+    top: 110px;
+    left: 200;
+    width: 2rem;
+    height: 20px;
+    border: 1px solid black;
+    border-radius: 8px;
+    color: #fff;
+    background-color: #3e8e41;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.edit{
+    position: absolute;
+    top: 110px;
+    left: 152;
+    width:2rem;
+    height: 20px;
+    border: 1px solid black;
+    border-radius: 8px;
+    color: #fff;
+    background-color: #3e8e41;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.remove:hover{
+    transition: 0.5s ease-in-out;
+    background-color: #3e8e;
+}
+.edit:hover{
+    transition: 0.5s ease-in-out;
+    background-color: #3e8e;
 }
 

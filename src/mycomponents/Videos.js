@@ -2,26 +2,21 @@ import "./Videos.css";
 import React from "react";
 
 
-const Videos = ({ name, views, time, tick = true , image , children}) => {
+const Videos = ({ name, views, time, tick = true , image , children ,removeVideo ,id,updateVideo}) => {
   let channelName = "fitcodding";
   console.log("render Video component")
   return (
     
     <>
+
+    
+
       <div className="image">
         <div>
          {image}
         </div>
-        {/* first method */}
-        {/* {tick ?(
-          <div>
-            {channelName} <span className="tick">&#10004;</span>
-          </div>
-        ) : (
-          <div>{channelName}</div>
-        )} */}
-
-        {/* second method */}
+        <button className="remove" onClick={()=>{removeVideo(id)}}>X</button>
+        <button className="edit" onClick={()=>{updateVideo(id)}}>edit</button>
 
         <div>
             {channelName} <span className="tick"> {tick ? "✔" : null } </span>
