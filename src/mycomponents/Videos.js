@@ -2,7 +2,7 @@ import "./Videos.css";
 import React from "react";
 
 
-const Videos = ({ name, views, time, tick = true , image , children ,removeVideo ,id,updateVideo}) => {
+const Videos = ({ name, views, time, tick = true , image , children ,dispatch ,id,updateVideo}) => {
   let channelName = "fitcodding";
   console.log("render Video component")
   return (
@@ -15,7 +15,7 @@ const Videos = ({ name, views, time, tick = true , image , children ,removeVideo
         <div>
          {image}
         </div>
-        <button className="remove" onClick={()=>{removeVideo(id)}}>X</button>
+        <button className="remove" onClick={()=>{ dispatch({type: "REMOVE",payload: id})}}>X</button>
         <button className="edit" onClick={()=>{updateVideo(id)}}>edit</button>
 
         <div>

@@ -22,14 +22,14 @@ let initialAddVideo={
 
 }
 
-function AddVideo({AddYoutubeVideo ,editableVideo ,editVideo}) {
+function AddVideo({dispatch ,editableVideo}) {
   const [video, setVideo] = useState(initialAddVideo);
   function handlerSubmit(e) {
     e.preventDefault();
     if(editableVideo){
-      editVideo(video)
+      dispatch({type: "EDIT",payload: video})
     }else{
-      AddYoutubeVideo(video)
+      dispatch({type: "ADD",payload: video})
     }
   
     setVideo(initialAddVideo)// use for clean from 
