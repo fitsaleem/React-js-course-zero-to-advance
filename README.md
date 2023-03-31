@@ -55,7 +55,8 @@ Example using React Hooks:
       {children}
     </UserContext.Provider>
   );
-};```
+};
+```
 
 5 Create a higher order component to consume the context named: with e.g. withUser
 Example using React Hooks:
@@ -66,7 +67,8 @@ Example using React Hooks:
     {(context) => <Child {...props} {...context} />}
     {/* Another option is:  {context => <Child {...props} context={context}/>}*/}
   </UserContext.Consumer>
-);```
+);
+```
 
 The difference between the two options above is if you want the context to be a single nested property by this name, to explode it to its properties (which in my opinion is more convenient).
 
@@ -82,7 +84,8 @@ For example:
     <App />
   </UserProvider>,
   document.getElementById("root")
-);```
+);
+```
 
 ```export default withUser(LoginForm);```
 
