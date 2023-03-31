@@ -74,7 +74,9 @@ The difference between the two options above is if you want the context to be a 
 
 6 Finally export them
 
-```export { UserProvider, withUser };
+```
+export { UserProvider, withUser };
+
 ```
 
 8 And use them however you like
