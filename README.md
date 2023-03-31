@@ -88,7 +88,9 @@ For example:
 );
 ```
 
-```export default withUser(LoginForm);
+```
+export default withUser(LoginForm);
+
 ```
 
 You'll also be able to notice I used the new "Hooks" feature that is shipped with React since version 16.8 to make it even neater and easier to create contexts.
