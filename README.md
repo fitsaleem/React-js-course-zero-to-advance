@@ -40,7 +40,8 @@ You might think to yourself: "Well, I'm convinced. How do I implement Context AP
 3 import and create a context like so:
 
 ```import React, { createContext } from "react";
-   const UserContext = createContext();```
+   const UserContext = createContext();
+   ```
    
 4 Create a component that will wrap the provider named Provider e.g. UserProvider
 Example using React Hooks:
