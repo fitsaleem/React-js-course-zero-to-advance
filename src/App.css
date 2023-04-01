@@ -41,3 +41,7 @@
   cursor: pointer;
   transition: 1s ease-out;
 }
+
+.dark{
+  background-color: #333;
+}

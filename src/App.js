@@ -1,8 +1,9 @@
 import "./App.css";
 import videoDB from "./youtube-video-data/Data";
-import React, { useReducer, useState } from "react";
+import React, { useReducer, useState ,useContext } from "react";
 import AddVideo from "./mycomponents/AddVideo";
 import VideoList from "./mycomponents/VideoList";
+import theme from "./context/themChange";
 
 
 
@@ -37,12 +38,16 @@ function App({ Title }) {
     }
   }
 
+   const themeContext = useContext(theme)
+   console.log({themeContext})
+
   function updateVideo(id) {
     setEditableVideo(youtubeVideos.find((video) => video.id === id));
   }
 
   return (
-    <>
+    
+    <div className={`${themeContext}`}>
       <div className="center"> {Title}</div>
       <AddVideo dispatch={dispatch} editableVideo={editableVideo}></AddVideo>
       <VideoList
@@ -50,7 +55,7 @@ function App({ Title }) {
         dispatch={dispatch}
         updateVideo={updateVideo}
       ></VideoList>
-    </>
+    </div>
   );
 }
 
