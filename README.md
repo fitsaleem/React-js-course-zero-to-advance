@@ -162,29 +162,9 @@ Once you have completed these steps, you should have a working React app built u
 
 - **Assignment 4** : Try this challenge : https://beta.reactjs.org/learn/state-a-components-memory#challenges
 
-### Related Videos : 
-
-1. HTML Forms-1 [Video](https://youtu.be/DUJEpSkzrVA)
-2. HTML Forms-2 : [Video](https://youtu.be/Nj6Omw6zOok)
 
 
 
-## MINI PROJECT
-
-
-# Project 1 - TODO App
-
-Todo app can be used to maintain a list of your pending daily items. A Simple todo list must have these features
-
-
-* You can add any new item to TODO list
-* You can click on any item to mark it as done, if you have done that by mistake - you can click again to undo.
-* You can delete any item (completed or pending)
-* You get a total of completed items and overall items on the list.
-* You can move list items "Up" or "Down" using buttons.
-
-
-![Output](https://raw.githubusercontent.com/abhishekrathore/fullstackbootcamp2019/master/01_REACT/2_PROJECT_1/images/todo-project.gif)
 
 
 ## Additional Features
@@ -241,9 +221,7 @@ Todo app can be used to maintain a list of your pending daily items. A Simple to
 
 - **Assignment 2** : Convert your **RESUME BUILDER** Application from `useState` to `useReducer` by converting states logic to a common reducer. Your reducer can have as many switch cases as you want. You can also divide them based on sections. `ADD_SKILL`, `ADD_EXPERIENCE` etc. to make logic even simpler for developer.
 
-### Related Videos : 
 
-1. REDUX - Understand it in Simple way [Video](https://youtu.be/WdEQNzUMP_M)
 
 
 
@@ -279,9 +257,7 @@ https://beta.reactjs.org/learn/manipulating-the-dom-with-refs#challenges
 
 
 
-### Related Videos : 
 
-1. Complete DOM Course playlist [Video](https://bit.ly/35nMKB7)
 
 
 
