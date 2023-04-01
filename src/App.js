@@ -1,17 +1,16 @@
 import "./App.css";
 import videoDB from "./youtube-video-data/Data";
-import React, { useReducer, useState ,useContext } from "react";
+import React, { useReducer, useState } from "react";
 import AddVideo from "./mycomponents/AddVideo";
 import VideoList from "./mycomponents/VideoList";
-import theme from "./context/themChange";
-
-
+import ThemeContext from "./context/themChange";
 
 function App({ Title }) {
   console.log("render App component");
 
   const [editableVideo, setEditableVideo] = useState(null);
   const [youtubeVideos, dispatch] = useReducer(videoReducer, videoDB);
+  const [mode, setMode] = useState("dark");
 
   function videoReducer(youtubeVideos, action) {
     switch (action.type) {
@@ -38,24 +37,31 @@ function App({ Title }) {
     }
   }
 
-   const themeContext = useContext(theme)
-   console.log({themeContext})
+  //  const theme = useContext(ThemeContext)
+  //  console.log({theme})
 
   function updateVideo(id) {
     setEditableVideo(youtubeVideos.find((video) => video.id === id));
   }
 
   return (
-    
-    <div className={`${themeContext}`}>
-      <div className="center"> {Title}</div>
-      <AddVideo dispatch={dispatch} editableVideo={editableVideo}></AddVideo>
-      <VideoList
-        youtubeVideos={youtubeVideos}
-        dispatch={dispatch}
-        updateVideo={updateVideo}
-      ></VideoList>
-    </div>
+    <ThemeContext.Provider value={mode}>
+      <div className={`${mode}`}>
+        <div className="center"> {Title}</div>
+        <div className="modebutton center">
+          <button onClick={() => setMode(mode === "dark" ? !mode : "dark")}>
+            {mode === "dark" ? "light " : "dark "}mode
+          </button>
+        </div>
+
+        <AddVideo dispatch={dispatch} editableVideo={editableVideo}></AddVideo>
+        <VideoList
+          youtubeVideos={youtubeVideos}
+          dispatch={dispatch}
+          updateVideo={updateVideo}
+        ></VideoList>
+      </div>
+    </ThemeContext.Provider>
   );
 }
 

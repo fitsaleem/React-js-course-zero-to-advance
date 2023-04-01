@@ -4,15 +4,17 @@
   box-sizing: border-box;
 }
 .container {
-  background-color: #333;
+ 
   width: 100%;
   min-height: 100vh;
   display: flex;
   flex-wrap: wrap;
   text-align: start;
   justify-content:space-around;
-  color: #fff;
-  border: 3px solid;
+  color: #000;
+  
+  
+  
   
   
 }
@@ -44,4 +46,14 @@
 
 .dark{
   background-color: #333;
+  color: #fff
+}
+.modebutton button{
+  cursor: pointer;
+  margin-bottom: 10px;
+    border: 3px solid;
+    border-radius: 30px;
+    width: 80px;
+    height: 33px;
+
 }

@@ -1,9 +1,12 @@
 import Videos from "./Videos"
 import PlayButton from "./playButton"
+// import { useContext } from "react"
+// import ThemeContext from "../context/themChange"
 
 function VideoList({youtubeVideos , dispatch,updateVideo}){
+  // const theme=useContext(ThemeContext)
     return(
-        <div className="container ${">
+        <div className={`container`}>
         {youtubeVideos.map((video) => (
           <Videos
             key={video.id}
