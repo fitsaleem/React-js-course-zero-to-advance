@@ -1,10 +1,8 @@
-import React, {  useEffect, useState } from "react";
-// import { useContext } from "react";
-// import dispatchYoutubeVideosContext from "../context/dispatchVideosContext";
+import React, { useEffect, useState } from "react";
 import useYoutubeVideoDispatch from "../Hooks/YoutubeVideoDispatch";
 import "./AddVideo.css";
 
-let initialAddVideo={
+let initialAddVideo = {
   image: (
     <>
       <iframe
@@ -20,28 +18,24 @@ let initialAddVideo={
   ),
   time: "1 years",
   tick: true,
-  name:"",
-  views:""
+  name: "",
+  views: "",
+};
 
-}
-
-function AddVideo({ editableVideo}) {
-
-  // const dispatch=useContext(dispatchYoutubeVideosContext)
-  const dispatch=useYoutubeVideoDispatch()
-
+function AddVideo({ editableVideo }) {
+  const dispatch = useYoutubeVideoDispatch();
 
   const [video, setVideo] = useState(initialAddVideo);
- 
+
   function handlerSubmit(e) {
     e.preventDefault();
-    if(editableVideo){
-      dispatch({type: "EDIT",payload: video})
-    }else{
-      dispatch({type: "ADD",payload: video})
+    if (editableVideo) {
+      dispatch({ type: "EDIT", payload: video });
+    } else {
+      dispatch({ type: "ADD", payload: video });
     }
-  
-    setVideo(initialAddVideo)// use for clean from 
+
+    setVideo(initialAddVideo); // use for clean from
   }
 
   function handleChange(e) {
@@ -49,15 +43,15 @@ function AddVideo({ editableVideo}) {
   }
 
   useEffect(() => {
-    if(editableVideo){
-      setVideo(editableVideo)
+    if (editableVideo) {
+      setVideo(editableVideo);
     }
-  }, [editableVideo])
-  
+  }, [editableVideo]);
+
   return (
-    <form className="form-container" >
+    <form className="form-container">
       <input
-      className="form-input" 
+        className="form-input"
         type="text"
         name="name"
         onChange={handleChange}
@@ -65,7 +59,7 @@ function AddVideo({ editableVideo}) {
         value={video.name} //control form
       ></input>
       <input
-      className="form-input" 
+        className="form-input"
         type="text"
         name="views"
         onChange={handleChange}
@@ -73,11 +67,8 @@ function AddVideo({ editableVideo}) {
         value={video.views}
       ></input>
       <div className="playbutton">
-        <button
-        className="form-submit"
-          onClick={handlerSubmit}
-        >
-         { editableVideo ? "Edit" : "Add"}  Video
+        <button className="form-submit" onClick={handlerSubmit}>
+          {editableVideo ? "Edit" : "Add"} Video
         </button>
       </div>
     </form>
