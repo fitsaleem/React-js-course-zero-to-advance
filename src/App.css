@@ -57,3 +57,7 @@
     height: 33px;
 
 }
+
+.modebutton button:hover{
+background-color: aqua;
+}
