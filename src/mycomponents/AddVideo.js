@@ -1,4 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, {  useEffect, useState } from "react";
+// import { useContext } from "react";
+// import dispatchYoutubeVideosContext from "../context/dispatchVideosContext";
+import useYoutubeVideoDispatch from "../Hooks/YoutubeVideoDispatch";
 import "./AddVideo.css";
 
 let initialAddVideo={
@@ -22,8 +25,14 @@ let initialAddVideo={
 
 }
 
-function AddVideo({dispatch ,editableVideo}) {
+function AddVideo({ editableVideo}) {
+
+  // const dispatch=useContext(dispatchYoutubeVideosContext)
+  const dispatch=useYoutubeVideoDispatch()
+
+
   const [video, setVideo] = useState(initialAddVideo);
+ 
   function handlerSubmit(e) {
     e.preventDefault();
     if(editableVideo){

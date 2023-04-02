@@ -1,9 +1,12 @@
 import "./App.css";
 import videoDB from "./youtube-video-data/Data";
-import React, { useReducer, useState } from "react";
+import React, {  useReducer, useState } from "react";
 import AddVideo from "./mycomponents/AddVideo";
 import VideoList from "./mycomponents/VideoList";
 import ThemeContext from "./context/themChange";
+import youTubeVideosContext from "./context/youtubeVideosContext";
+import dispatchYoutubeVideosContext from "./context/dispatchVideosContext";
+
 
 function App({ Title }) {
   console.log("render App component");
@@ -44,8 +47,12 @@ function App({ Title }) {
     setEditableVideo(youtubeVideos.find((video) => video.id === id));
   }
 
+  
+
   return (
     <ThemeContext.Provider value={mode}>
+      <youTubeVideosContext.Provider value={youtubeVideos}>
+        <dispatchYoutubeVideosContext.Provider value={dispatch}>
       <div className={`${mode}`}>
         <div className="center"> {Title}</div>
         <div className="modebutton center">
@@ -54,13 +61,15 @@ function App({ Title }) {
           </button>
         </div>
 
-        <AddVideo dispatch={dispatch} editableVideo={editableVideo}></AddVideo>
+        <AddVideo  editableVideo={editableVideo}></AddVideo>
         <VideoList
-          youtubeVideos={youtubeVideos}
-          dispatch={dispatch}
+         
+         
           updateVideo={updateVideo}
         ></VideoList>
       </div>
+      </dispatchYoutubeVideosContext.Provider>
+      </youTubeVideosContext.Provider>
     </ThemeContext.Provider>
   );
 }

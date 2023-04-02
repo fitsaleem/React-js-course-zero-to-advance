@@ -1,9 +1,16 @@
 import Videos from "./Videos"
 import PlayButton from "./playButton"
 // import { useContext } from "react"
+// import youTubeVideosContext from "../context/youtubeVideosContext"
+import useYoutubeVideo from "../Hooks/YoutubeVideo"
 // import ThemeContext from "../context/themChange"
 
-function VideoList({youtubeVideos , dispatch,updateVideo}){
+function VideoList({ updateVideo}){
+
+  
+
+  // const youtubeVideos=useContext(youTubeVideosContext)
+  const youtubeVideos=useYoutubeVideo()
   // const theme=useContext(ThemeContext)
     return(
         <div className={`container`}>
@@ -15,7 +22,6 @@ function VideoList({youtubeVideos , dispatch,updateVideo}){
             time={video.time}
             tick={video.tick}
             image={video.image}
-            dispatch={dispatch}
             updateVideo={updateVideo}
             id={video.id}
           >
