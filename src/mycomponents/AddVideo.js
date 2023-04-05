@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import useYoutubeVideoDispatch from "../Hooks/YoutubeVideoDispatch";
 import "./AddVideo.css";
 
@@ -26,8 +26,10 @@ function AddVideo({ editableVideo }) {
   const dispatch = useYoutubeVideoDispatch();
 
   const [video, setVideo] = useState(initialAddVideo);
+  const inputRef= useRef(null)
 
   function handlerSubmit(e) {
+    
     e.preventDefault();
     if (editableVideo) {
       dispatch({ type: "EDIT", payload: video });
@@ -43,14 +45,17 @@ function AddVideo({ editableVideo }) {
   }
 
   useEffect(() => {
+    
     if (editableVideo) {
       setVideo(editableVideo);
     }
+    inputRef.current.focus();
   }, [editableVideo]);
 
   return (
     <form className="form-container">
       <input
+      ref={inputRef}
         className="form-input"
         type="text"
         name="name"
