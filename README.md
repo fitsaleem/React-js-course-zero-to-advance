@@ -3,9 +3,9 @@
   
 - **Assignment 1** : If we delete `node_modules`. How to run our app again successfully ?
 
-***Answer:***
+***Answer: ***
 
-If you delete the node_modules folder in your React project, you will need to recreate it by running the npm install command again in your project directory. Here are the steps you can follow to run your React app successfully after deleting node_modules:
+If you delete the node_modules folder in  React project, you will need to recreate it by running the npm install command again in your project directory. Here are the steps you can follow to run your React app successfully after deleting node_modules:
 
 Open a terminal and navigate to the root directory of your React project.
 
