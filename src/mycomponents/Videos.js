@@ -19,7 +19,11 @@ const Videos = ({
   return (
     <>
       <div className="image">
-        <div>{image}</div>
+        <div>
+       
+        {image}
+
+        </div>
         <button
           className="remove"
           onClick={() => {
